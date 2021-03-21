@@ -9,20 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-/*
- * Answers to homework question
- *
- * Q1 - Which subclass of Fragment displays a vertical list of items that are managed by an adapter?
- * A1 - RowsFragment()
- *
- * Q2 - Which of the following is the best sequence for adding a fragment to an activity that is already running?
- * A2 - Declare the location for the fragment inside the activity's layout file using the <FrameLayout> view group. Then get an instance of the fragment and FragmentManager, begin a transaction, use the add() transaction, and commit the transaction.
- *
- * Q3 - Which statement gets a reference to a fragment using the fragment's layout resource?
- * A3 -
- * */
-
-public class MainActivity extends AppCompatActivity {
+public class SecondActivity extends AppCompatActivity {
     private Button mButton;
     private boolean isFragmentDisplayed = false;
     static final String STATE_FRAGMENT = "state_of_fragment";
@@ -30,7 +17,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_second);
+
         mButton = findViewById(R.id.open_button1);
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,9 +64,8 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(savedInstanceState);
     }
 
-    public void onNextClick(View view) {
-        Intent intent = new Intent(this, SecondActivity.class);
+    public void onPreviousClick(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-
 }

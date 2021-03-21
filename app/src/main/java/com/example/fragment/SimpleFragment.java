@@ -10,8 +10,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-
-
 public class SimpleFragment extends Fragment {
     private static final int YES = 0;
     private static final int NO = 1;
@@ -47,5 +45,11 @@ public class SimpleFragment extends Fragment {
         return rootView;
     }
 
+    public static SimpleFragment newInstance(){
+        return new SimpleFragment();
+    }
+
 }
+
+
 
